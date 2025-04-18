@@ -18,6 +18,8 @@ python3 -m pip install tasksync/
 python3 tasksync/install_hooks.py
 ```
 
+In Debian 12, `python3 -m pip install tasksync/` may fail with an error advising to use `pipx`. If so, do `sudo apt install pipx` if needed, and run `python3 -m pip install tasksync/`. You may see a prolonged notice about `upgrading shared libraries`. Please be patient with this upgrade.
+
 3. Run `tasksync start` to start the tasksync service. Now whenever tasks are created and/or updated in Taskwarrior, corresponding tasks will be created and/or updated in Todoist.
 
 4. (Optional) Run `tasksync pull` to pull all existing tasks from Todoist into Taskwarrior.

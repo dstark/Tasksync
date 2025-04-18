@@ -18,6 +18,19 @@ python3 -m pip install tasksync/
 python3 tasksync/install_hooks.py
 ```
 
+In Debian 12---either natively or under WSL only, `python3 -m pip install tasksync/` may fail with an error advising to use `pipx`. If so, do
+
+```bash
+git clone https://github.com/kgoettler/tasksync.git
+cd tasksync
+python3 -m venv venv
+source venv/bin/activate
+pip install -e .
+pip install requests tasklib --verbose
+```
+
+(After working with tasksync in this virtual environment, do `deactivate` to exit the virtual environment and return to your shell prompt.)
+
 3. Run `tasksync start` to start the tasksync service. Now whenever tasks are created and/or updated in Taskwarrior, corresponding tasks will be created and/or updated in Todoist.
 
 4. (Optional) Run `tasksync pull` to pull all existing tasks from Todoist into Taskwarrior.
